@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_Concurso.controladorConcurso">
+   <children>
+      <ScrollPane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="599.0" prefWidth="1007.0" styleClass="background">
+               <children>
+                  <TableView fx:id="concursoTable" layoutY="78.0" prefHeight="513.0" prefWidth="1011.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="75.0">
+                    <columns>
+                      <TableColumn fx:id="NoColumn" prefWidth="100.0" resizable="false" text="No." />
+                      <TableColumn fx:id="NombreConcursoColumn" prefWidth="150.0" text="Nombre Concurso" />
+                        <TableColumn fx:id="TipoConcursoColumn" prefWidth="137.0" text="Tipo de Concurso" />
+                        <TableColumn fx:id="LugarConcursoColumn" prefWidth="103.0" text="Lugar" />
+                        <TableColumn fx:id="FechaColumn" prefWidth="135.0" text="Fecha Concurso" />
+                        <TableColumn fx:id="FinRegistroColumn" prefWidth="132.0" text="Fecha Fin Registro" />
+                        <TableColumn prefWidth="244.0" text="Acción">
+                           <columns>
+                              <TableColumn fx:id="showColumn" prefWidth="81.0" text="Show" />
+                              <TableColumn fx:id="inscribirColumn" prefWidth="76.0" text="Inscribir" />
+                              <TableColumn fx:id="deleteColumn" prefWidth="68.0" text="Delete" />
+                           </columns>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+                  <Label layoutX="35.0" layoutY="38.0" styleClass="label-bright" text="HOLA ! " AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="30.0" />
+                  <Label fx:id="nombreUsuarioLabel" layoutX="77.0" layoutY="30.0" styleClass="label-bright" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="623.0" AnchorPane.topAnchor="30.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@concursoPanel.css" />
+      <URL value="@concurso.css" />
+   </stylesheets>
+</AnchorPane>

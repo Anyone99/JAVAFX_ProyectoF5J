@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@modificarDatos.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_Raiz.ControladorRaiz">
+   <top>
+      <MenuBar BorderPane.alignment="TOP_LEFT">
+        <menus>
+            <Menu mnemonicParsing="false" text="Información">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleModifyData" text="Modificar Datos" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="EXIT" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Concurso">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleShowConcurso" text="Calendario Concurso" />
+                  <MenuItem mnemonicParsing="false" text="Exportar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleContactUs" text="Contactar" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

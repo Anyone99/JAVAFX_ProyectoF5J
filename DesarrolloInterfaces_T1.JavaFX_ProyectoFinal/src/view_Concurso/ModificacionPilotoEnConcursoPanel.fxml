@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@concurso.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_Concurso.controladorPilotoInscripcionConcurso">
+   <children>
+      <Label layoutX="14.0" layoutY="22.0" prefHeight="105.0" prefWidth="639.0" styleClass="label-header" text="Inscripción en Concurso :   " AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="151.0" AnchorPane.topAnchor="10.0" />
+      <GridPane layoutX="14.0" layoutY="86.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="185.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="185.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="0.0" prefWidth="0.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="185.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="185.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Concurso : " GridPane.rowIndex="1" />
+            <Label text="Fecha Concurso : " GridPane.rowIndex="3" />
+            <TextField fx:id="fechaConcursoField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Piloto : " GridPane.rowIndex="5" />
+            <TextField fx:id="emailPilotoField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Modelo : " GridPane.columnIndex="3" />
+            <Label text="Frecencia : " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Categoria : " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Envergadura : " GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label text="Peso : " GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="Consumo" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label text="Voltaje Nominal : " GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="categoriaChoiceBox" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="modeloField" GridPane.columnIndex="4" />
+            <TextField fx:id="frecuenciaField" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="envergaduraTextField" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <TextField fx:id="pesoField" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField fx:id="consumoField" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="voltajeNominalChoiceBox" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <TextField fx:id="nombreConcursoField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox layoutX="554.0" layoutY="500.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="590.0">
+         <children>
+            <Button defaultButton="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="119.0" text="Aceptar" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Clean" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

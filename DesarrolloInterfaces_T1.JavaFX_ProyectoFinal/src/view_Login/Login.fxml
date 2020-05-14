@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" styleClass="background" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_Login.controladorLogin">
+   <children>
+      <Label alignment="CENTER" layoutX="45.0" layoutY="88.0" styleClass="label-header" text="Bienvenid@ a Competición FJ5" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="118.0" layoutY="259.0" prefHeight="37.0" prefWidth="138.0" styleClass="label-bright" text="Contraseña :" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="265.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="118.0" layoutY="213.0" prefHeight="37.0" prefWidth="138.0" styleClass="label-bright" text="Usuario: " AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailField" layoutX="299.0" layoutY="219.0" prefHeight="25.0" prefWidth="235.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="220.0" />
+      <PasswordField fx:id="PasswordField" layoutX="299.0" layoutY="265.0" onAction="#onEnter" prefHeight="25.0" prefWidth="235.0" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="265.0" />
+      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="315.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#buttonRegistrarUser" prefHeight="35.0" prefWidth="150.0" text="Nuevo Usuario" />
+            <Button contentDisplay="RIGHT" defaultButton="true" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handlerLogin" prefHeight="35.0" prefWidth="100.0" text="Login" textAlignment="CENTER" />
+         </children>
+      </HBox>
+      <HBox layoutX="290.0" layoutY="183.0" prefHeight="27.0" prefWidth="264.0" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="185.0">
+         <children>
+            <RadioButton fx:id="usuarioButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="145.0" styleClass="label-bright" text="Usuario" />
+            <RadioButton fx:id="adminButton" mnemonicParsing="false" styleClass="label-bright" text="Administrador" />
+         </children>
+      </HBox>
+      <Button layoutX="32.0" layoutY="315.0" mnemonicParsing="false" onAction="#buttonRecuperarContrasena" prefHeight="35.0" prefWidth="180.0" text="Recuperar Contraseña" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="484.0" AnchorPane.topAnchor="315.0" />
+   </children>
+</AnchorPane>

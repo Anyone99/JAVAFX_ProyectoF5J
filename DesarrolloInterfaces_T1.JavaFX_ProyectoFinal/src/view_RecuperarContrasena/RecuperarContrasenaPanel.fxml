@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@RecContrasena.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_RecuperarContrasena.controladorRecuperarContrasena">
+   <children>
+      <Label layoutX="26.0" layoutY="30.0" prefHeight="57.0" prefWidth="568.0" styleClass="label-header" text="Recuperar tu contraseña" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="30.0" />
+      <Label layoutX="170.0" layoutY="98.0" text="Por favor, introduce tu correo electrónico :" AnchorPane.bottomAnchor="282.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="98.0" />
+      <Label layoutX="125.0" layoutY="162.0" prefHeight="37.0" prefWidth="50.0" text="Email : " AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="162.0" />
+      <TextField fx:id="emailField" layoutX="200.0" layoutY="162.0" prefHeight="40.0" prefWidth="225.0" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="162.0" />
+      <Button fx:id="enviarButton" layoutX="335.0" layoutY="207.0" mnemonicParsing="false" onAction="#buttonEnviar" prefHeight="37.0" prefWidth="90.0" text="Enviar " AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="207.0" />
+      <Label layoutX="26.0" layoutY="285.0" prefHeight="37.0" prefWidth="150.0" text="Codigo Vertificación :" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="424.0" AnchorPane.topAnchor="285.0" />
+      <TextField fx:id="codigoVerfTextField" layoutX="200.0" layoutY="282.0" prefHeight="37.0" prefWidth="225.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="285.0" />
+      <Button fx:id="verficarButton" layoutX="335.0" layoutY="329.0" mnemonicParsing="false" onAction="#buttonVerificar" prefHeight="37.0" prefWidth="90.0" text="Verficar" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="329.0" />
+      <Button layoutX="486.0" layoutY="380.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="37.0" prefWidth="100.0" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="380.0" />
+   </children>
+</AnchorPane>

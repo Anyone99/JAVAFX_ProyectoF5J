@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@adminPanel.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_Admin.controladorAdmin">
+   <children>
+      <MenuBar layoutX="5.0" AnchorPane.bottomAnchor="760.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Exportar">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleSaveAsFile" text="Guardar como..." />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveFile" text="Guardar" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="adminPane" layoutX="14.0" layoutY="22.0" prefHeight="600.0" prefWidth="800.0" styleClass="tabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0">
+        <tabs>
+          <Tab fx:id="usuarioTab" text="Usuario">
+            <content>
+              <AnchorPane>
+                     <children>
+                        <TabPane fx:id="usuarioPane" layoutX="18.0" layoutY="-1.0" prefHeight="567.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab fx:id="anadirUsuarioTab" text="Añadir">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <AnchorPane prefHeight="631.0" prefWidth="1000.0" styleClass="background" stylesheets="@adminPanel.css">
+                                                   <children>
+                                                      <Label prefHeight="44.0" prefWidth="306.0" styleClass="label-header" text="Añadir Usuario: " AnchorPane.bottomAnchor="695.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="15.0">
+                                                         <font>
+                                                            <Font size="36.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <GridPane AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="70.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000000.0" minWidth="10.0" prefWidth="50.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="10000.0" minWidth="10.0" prefWidth="40.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label styleClass="label-bright" text="Nombre: " />
+                                                            <Label styleClass="label-bright" text="Apellido" GridPane.rowIndex="1" />
+                                                            <Label styleClass="label-bright" text="Email: " GridPane.rowIndex="2" />
+                                                            <Label styleClass="label-bright" text="Telefono : " GridPane.rowIndex="3" />
+                                                            <Label styleClass="label-bright" text="Ciudad : " GridPane.rowIndex="4" />
+                                                            <Label styleClass="label-bright" text="Club : " GridPane.rowIndex="5" />
+                                                            <Label styleClass="label-bright" text="Password:  " GridPane.rowIndex="8" />
+                                                            <TextField fx:id="add_piloto_NombleField" GridPane.columnIndex="1" />
+                                                            <TextField fx:id="add_piloto_ApeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="add_piloto_EmailField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <TextField fx:id="add_piloto_TelefonoFiled" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <TextField fx:id="add_piloto_ClubField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                            <Label styleClass="label-bright" text="Numero Licencia : " GridPane.rowIndex="6" />
+                                                            <TextField fx:id="add_piloto_NumLicenField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                            <CheckBox fx:id="add_piloto_PasswordBox" mnemonicParsing="false" text="Contraseña principal" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                            <ChoiceBox fx:id="add_piloto_CiudadCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                            <Label styleClass="label-bright" text="Fecha Inscripción : " GridPane.rowIndex="7" />
+                                                            <DatePicker fx:id="add_piloto_FechaInscripDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                         </children>
+                                                      </GridPane>
+                                                      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="650.0">
+                                                         <children>
+                                                            <Button defaultButton="true" mnemonicParsing="false" onAction="#add_piloto_ButtonAdd" prefHeight="35.0" prefWidth="200.0" text="Añadir" />
+                                                            <Button mnemonicParsing="false" onAction="#buttonClean" prefHeight="35.0" prefWidth="200.0" text="Limpiar" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                            <Tab fx:id="modificarUsuarioTab" text="Modificar">
+                                 <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                          <AnchorPane styleClass="background">
+                                             <children>
+                                                <TableView fx:id="mod_piloto_PilotoTableView" prefHeight="521.0" prefWidth="990.0" AnchorPane.bottomAnchor="139.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="mod_piloto_idPilotoColumn" prefWidth="36.0" text="ID" />
+                                                    <TableColumn fx:id="mod_piloto_nombreColumn" prefWidth="110.0" text="Nombre" />
+                                                      <TableColumn fx:id="mod_piloto_apellidoColumn" prefWidth="110.0" text="Apellido" />
+                                                      <TableColumn fx:id="mod_piloto_emailColumn" prefWidth="122.0" text="Email" />
+                                                      <TableColumn fx:id="mod_piloto_passwordColumn" prefWidth="97.0" text="Contraseña" />
+                                                      <TableColumn fx:id="mod_piloto_telefonoColumn" prefWidth="90.0" text="Telefóno :" />
+                                                      <TableColumn fx:id="mod_piloto_ciudadColumn" prefWidth="87.0" text="Ciudad: " />
+                                                      <TableColumn fx:id="mod_piloto_clubColumn" prefWidth="88.0" text="Club :" />
+                                                      <TableColumn fx:id="mod_piloto_numLicenciaColumn" prefWidth="128.0" text="numLicencia" />
+                                                      <TableColumn fx:id="mod_piloto_fechaInsColumn" prefWidth="131.0" text="Fecha Inscripción" />
+                                                  </columns>
+                                                </TableView>
+                                                <GridPane layoutX="149.0" layoutY="77.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="50.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="92.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="318.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="68.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label styleClass="label-bright" text="Correo de piloto :" />
+                                                      <TextField fx:id="add_piloto_EmailFieldMod" GridPane.columnIndex="1" />
+                                                      <Button mnemonicParsing="false" onAction="#mod_piloto_ButtonSearch" text="Buscar" GridPane.columnIndex="2" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox layoutX="493.0" layoutY="627.0" prefHeight="53.0" prefWidth="445.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="627.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#mod_piloto_ButtonModify" prefHeight="35.0" prefWidth="200.0" text="Modificar" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonClean" prefHeight="35.0" prefWidth="200.0" text="Limpiar" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="eliminarUsuarioTab" text="Eliminar">
+                                <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                        <AnchorPane prefHeight="706.0" prefWidth="1009.0" styleClass="background">
+                                             <children>
+                                                <HBox layoutX="550.0" layoutY="638.0" prefHeight="50.0" prefWidth="412.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="638.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#elim_piloto_ButtonDelete" prefHeight="35.0" prefWidth="200.0" text="Eliminar" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonClean" prefHeight="35.0" prefWidth="200.0" text="Clear" />
+                                                   </children>
+                                                </HBox>
+                                                <GridPane layoutX="232.0" layoutY="36.0" prefHeight="61.0" prefWidth="505.0" AnchorPane.bottomAnchor="637.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="36.0">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="317.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="49.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <ComboBox fx:id="elim_piloto_buscarCombo" prefHeight="27.0" prefWidth="238.0" />
+                                                      <TextField fx:id="elim_piloto_BuscarField" prefHeight="27.0" prefWidth="222.0" GridPane.columnIndex="1" />
+                                                      <Button mnemonicParsing="false" onAction="#elim_piloto_ButtonSearch" prefHeight="27.0" prefWidth="76.0" text="Buscar" GridPane.columnIndex="2" />
+                                                   </children>
+                                                </GridPane>
+                                                <TableView fx:id="elim_piloto_PilotoTableView" prefHeight="521.0" prefWidth="989.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="elim_piloto_idPilotoColumn" prefWidth="36.0" text="ID" />
+                                                      <TableColumn fx:id="elim_piloto_nombreColumn" prefWidth="100.0" text="Nombre" />
+                                                      <TableColumn fx:id="elim_piloto_apellidoColumn" prefWidth="100.0" text="Apellido" />
+                                                      <TableColumn fx:id="elim_piloto_emailColumn" prefWidth="147.18397521972656" text="Email" />
+                                                      <TableColumn fx:id="elim_piloto_passwordColumn" prefWidth="88.78927612304688" text="Contraseña" />
+                                                      <TableColumn fx:id="elim_piloto_telefonoColumn" prefWidth="94.38693237304688" text="Telefóno :" />
+                                                      <TableColumn fx:id="elim_piloto_ciudadColumn" prefWidth="86.18780517578125" text="Ciudad: " />
+                                                      <TableColumn fx:id="elim_piloto_clubColumn" prefWidth="90.586181640625" text="Club :" />
+                                                      <TableColumn fx:id="elim_piloto_numLicenciaColumn" prefWidth="127.386962890625" text="numLicencia" />
+                                                      <TableColumn fx:id="elim_piloto_fechaInscripColumn" prefWidth="122.99224853515625" text="Fecha Inscripción" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                </content>
+                              </Tab>
+                              <Tab fx:id="listadoUsuarioTab" text="Ver todos los Usuarios">
+                                 <content>
+                                    <ScrollPane prefViewportHeight="732.0" prefViewportWidth="990.0">
+                                       <content>
+                                          <AnchorPane prefHeight="706.0" prefWidth="999.0" styleClass="background">
+                                             <children>
+                                                <TableView fx:id="show_piloto_PilotoTableView" layoutX="5.0" layoutY="59.0" prefHeight="313.0" prefWidth="987.0" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="59.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="show_piloto_noPilotoColumn" prefWidth="100.0" text="No." />
+                                                    <TableColumn fx:id="show_piloto_idPilotoColumn" prefWidth="125.0" text="id Piloto" />
+                                                      <TableColumn fx:id="show_piloto_NombreColumn" prefWidth="150.0" text="Nombre" />
+                                                      <TableColumn fx:id="show_piloto_ApeColumn" prefWidth="150.0" text="Apellido" />
+                                                      <TableColumn fx:id="show_piloto_ClubColumn" prefWidth="150.0" text="Club" />
+                                                      <TableColumn fx:id="show_piloto_ConcursoColumn" prefWidth="150.0" text="Concurso" />
+                                                      <TableColumn fx:id="show_piloto_FechaInscripColumn" prefWidth="150.0" text="FechaInscripción" />
+                                                  </columns>
+                                                </TableView>
+                                                <GridPane layoutY="419.0" prefHeight="257.0" prefWidth="1011.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="419.0">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="225.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="225.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="0.0" prefWidth="5.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="230.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Club : " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                      <Label text="Id Piloto : " />
+                                                      <Label text="Nombre Piloto : " GridPane.rowIndex="1" />
+                                                      <Label text="Apellido :" GridPane.rowIndex="2" />
+                                                      <Label text="Email : " GridPane.rowIndex="3" />
+                                                      <Label text="Numero Licencia : " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <Label text="Fecha Inscripción :" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                                      <Label text="Ciudad : " GridPane.columnIndex="3" />
+                                                      <Label fx:id="show_piloto_IdLabel" GridPane.columnIndex="1" />
+                                                      <Label fx:id="show_piloto_nombreLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <Label fx:id="show_piloto_apellidoLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label fx:id="show_piloto_EmailLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label fx:id="show_piloto_ciudadLabel" GridPane.columnIndex="4" />
+                                                      <Label fx:id="show_piloto_numLicenciaLabel" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                      <Label fx:id="show_piloto_clubLabel" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                      <Label fx:id="show_piloto_fechaInscripLabel" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                                      <Label text="Teléfono : " GridPane.rowIndex="4" />
+                                                      <Label text="Concurso : " GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                      <Label GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                      <Label fx:id="show_piloto_telefonoLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <Label fx:id="show_piloto_ConcursoLabel" prefHeight="17.0" prefWidth="238.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                                <Button layoutX="813.0" layoutY="11.0" mnemonicParsing="false" onAction="#buttonRefresh" prefHeight="27.0" prefWidth="94.0" text="Refresh" AnchorPane.bottomAnchor="654.0" AnchorPane.leftAnchor="815.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="11.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content></Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="concursoTab" text="Concurso">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="concursoPane" prefHeight="567.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab fx:id="anadirConcursoTab" text="Añadir">
+                              <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                      <AnchorPane prefHeight="704.0" prefWidth="1000.0" styleClass="background">
+                                             <children>
+                                                <GridPane layoutX="14.0" layoutY="96.0" prefHeight="538.0" prefWidth="990.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="96.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.9230041503906" minWidth="10.0" prefWidth="194.41445922851562" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.5855407714844" minWidth="10.0" prefWidth="256.0760498046875" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.83172607421875" minWidth="0.0" prefWidth="36.3070068359375" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.6929931640625" minWidth="10.0" prefWidth="171.26043701171875" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.23193359375" minWidth="10.0" prefWidth="304.73956298828125" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints maxHeight="203.3671417236328" minHeight="10.0" prefHeight="114.81089782714844" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="240.36558532714844" minHeight="10.0" prefHeight="112.18910217285156" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="278.43585205078125" minHeight="10.0" prefHeight="151.5234832763672" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Nombre Concurso :" />
+                                                      <Label text="Fecha de Concurso :" GridPane.rowIndex="2" />
+                                                      <Label text="Tipo de Concurso :" GridPane.rowIndex="1" />
+                                                      <Label text="Lugar de Concurso :" GridPane.columnIndex="3" />
+                                                      <Label prefHeight="17.0" prefWidth="185.0" text="Fin de Registro : " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="add_conc_nombreConcursoField" prefHeight="27.0" prefWidth="214.0" GridPane.columnIndex="1" />
+                                                      <DatePicker fx:id="add_conc_FechaConcDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <DatePicker fx:id="add_conc_FecFinRegisConcDatePicker" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                      <ComboBox fx:id="add_conc_tipoConcursoComboBox" prefWidth="150.0" stylesheets="@adminPanel.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <ComboBox fx:id="add_conc_LugarConcComboBox" prefWidth="150.0" GridPane.columnIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox layoutX="466.0" layoutY="453.0" prefHeight="48.0" prefWidth="430.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="625.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#add_concurso_ButtonAdd" prefHeight="35.0" prefWidth="200.0" text="Añadir" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonClean" prefHeight="35.0" prefWidth="200.0" text="Clean" />
+                                                   </children>
+                                                </HBox>
+                                                <Label layoutX="39.0" layoutY="17.0" styleClass="label-header" text="Añadir Concurso : ">
+                                                   <font>
+                                                      <Font size="48.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="modificarConcursoTab" text="Modificar">
+                              <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                      <AnchorPane prefHeight="700.0" prefWidth="992.0" styleClass="background" stylesheets="@adminPanel.css">
+                                             <children>
+                                                <TableView fx:id="mod_conc_ConcursoTableView" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="mod_conc_NoConcursoColumn" prefWidth="100.0" text="No" />
+                                                    <TableColumn fx:id="mod_conc_NombreColumn" prefWidth="150.0" text="NombreConcurso" />
+                                                      <TableColumn fx:id="mod_conc_TipoConcursoColumn" prefWidth="150.0" text="Tipo Concurso" />
+                                                      <TableColumn fx:id="mod_conc_LugarConcursoColumn" prefWidth="150.0" text="Lugar Concurso" />
+                                                      <TableColumn fx:id="mod_conc_FechaConcursoColumn" prefWidth="150.0" text="Fecha Concurso" />
+                                                      <TableColumn fx:id="mod_conc_FinRegistroColumn" prefWidth="200.0" text="Fecha Fin Registro Concurso" />
+                                                  </columns>
+                                                </TableView>
+                                                <GridPane layoutX="14.0" layoutY="307.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="325.0">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="0.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="No Concurso : " />
+                                                      <Label text="Nombre Concurso : " GridPane.rowIndex="1" />
+                                                      <Label text="Tipo Concurso :" GridPane.rowIndex="2" />
+                                                      <Label text="Lugar Concurso :" GridPane.rowIndex="3" />
+                                                      <Label text="Fecha Fin Registro Concurso : " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                      <Label text="Fecha Concurso : " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                      <TextField fx:id="mod_conc_noConcursoTextField" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="mod_conc_nombreConcursoTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <ChoiceBox fx:id="mod_conc_TipoConcursoChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <ChoiceBox fx:id="mod_conc_LugarConcursoChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <DatePicker fx:id="mod_conc_FecFinRegConcursoDatePicker" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                      <DatePicker fx:id="mod_conc_fechaConcDatePicker" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox layoutX="702.0" layoutY="641.0" prefHeight="40.0" prefWidth="290.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="625.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#mod_conc_ButtonModify" prefHeight="40.0" prefWidth="145.0" text="Modificar" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonRefresh" prefHeight="40.0" prefWidth="145.0" text="Refresh" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonClean" prefHeight="40.0" prefWidth="145.0" text="Clean" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="eliminarConcursoTab" text="Eliminar">
+                                 <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                          <AnchorPane prefHeight="704.0" prefWidth="992.0" styleClass="background" stylesheets="@adminPanel.css">
+                                             <children>
+                                                <TableView fx:id="elim_conc_ConcursoTableView" layoutX="14.0" layoutY="37.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="elim_conc_NoConcursoColumn" prefWidth="100.0" text="No" />
+                                                    <TableColumn fx:id="elim_conc_NombreColumn" prefWidth="200.0" text="Nombre Concurso" />
+                                                      <TableColumn fx:id="elim_conc_LugarConcursoColumn" prefWidth="200.0" text="Lugar Concurso" />
+                                                      <TableColumn fx:id="elim_conc_TipoConcursoColumn" prefWidth="175.0" text="Tipo Concurso" />
+                                                      <TableColumn fx:id="elim_conc_FechaConcursoColumn" prefWidth="150.0" text="Fecha Concurso" />
+                                                      <TableColumn fx:id="elim_conc_FinRegistroColumn" prefWidth="150.0" text="Fin Registro Concurso" />
+                                                  </columns>
+                                                </TableView>
+                                                <ChoiceBox fx:id="elim_conc_FechaChoiceBox" layoutX="20.0" layoutY="43.0" onMouseClicked="#elim_conc_ButtonSelectedFecha" prefWidth="150.0" />
+                                                <HBox layoutX="788.0" layoutY="635.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="625.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#elim_conc_ButtonDelete" prefHeight="35.0" prefWidth="200.0" text="Eliminar" />
+                                                      <Button mnemonicParsing="false" onAction="#buttonRefresh" prefHeight="35.0" prefWidth="200.0" text="Refresh" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="listaConcursoTab" text="Ver todos los Concursos">
+                                <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="704.0" prefWidth="1000.0" styleClass="background">
+                                             <children>
+                                                <Button layoutX="840.0" layoutY="687.0" mnemonicParsing="false" onAction="#buttonRefresh" text="Refresh" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="800.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="625.0" />
+                                                <TableView fx:id="show_conc_ConcursoTableView" prefHeight="549.0" prefWidth="958.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="50.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="show_conc_NoConcursoColumn" prefWidth="100.0" text="No" />
+                                                    <TableColumn fx:id="show_conc_NombreColumn" prefWidth="175.0" text="Nombre Concurso" />
+                                                      <TableColumn fx:id="show_conc_TipoConcursoColumn" prefWidth="175.0" text="Tipo Concurso" />
+                                                      <TableColumn fx:id="show_conc_LugarConcursoColumn" prefWidth="175.0" text="Lugar Concurso" />
+                                                      <TableColumn fx:id="show_conc_FechaConcursoColumn" prefWidth="175.0" text="Fecha Concurso" />
+                                                      <TableColumn fx:id="show_conc_FinRegistroColumn" prefWidth="175.0" text="Fecha Fin Registro" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="mangaTab" text="Manga">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="mangaPane" layoutX="14.0" layoutY="14.0" prefHeight="767.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab fx:id="anadirMangaTab" text="Añadir/Modificar">
+                              <content>
+                                    <ScrollPane prefViewportHeight="2374.0" prefViewportWidth="990.0">
+                                       <content>
+                                      <AnchorPane prefHeight="700.0" prefWidth="1000.0" styleClass="background">
+                                             <children>
+                                                <HBox layoutY="620.0" prefHeight="57.0" prefWidth="400.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="620.0">
+                                                   <children>
+                                                      <Button defaultButton="true" mnemonicParsing="false" onAction="#add_Manga_ButtonAdd" prefHeight="50.0" prefWidth="200.0" text="Añadir / Modificar Manga" />
+                                                      <Button mnemonicParsing="false" onAction="#add_Manga_ButtonCalcularPuntuacion" prefHeight="50.0" prefWidth="200.0" text="Calcular Puntuación Final" />
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="add_concManga_ConcursoTableView" layoutX="79.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="add_concManga_NoConcursoColumn" prefWidth="150.0" text="No." />
+                                                    <TableColumn fx:id="add_concManga_NombreColumn" prefWidth="200.0" text="Nombre" />
+                                                      <TableColumn fx:id="add_concManga_TipoConcursoColumn" prefWidth="200.0" text="Tipo" />
+                                                      <TableColumn fx:id="add_concManga_LugarConcursoColumn" prefWidth="200.0" text="Lugar" />
+                                                      <TableColumn fx:id="add_concManga_FechaConcursoColumn" prefWidth="200.0" text="Fecha Concurso" />
+                                                  </columns>
+                                                </TableView>
+                                                <TableView fx:id="add_pilotoManga_PilotoTableView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="325.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="add_pilotoManga_NoPilotoColumn" prefWidth="100.0" text="No." />
+                                                      <TableColumn fx:id="add_pilotoManga_idPilotoColumn" prefWidth="100.0" text="ID Piloto" />
+                                                    <TableColumn fx:id="add_pilotoManga_NombreColumn" prefWidth="200.0" text="Nombre" />
+                                                      <TableColumn fx:id="add_pilotoManga_ApellidoColumn" prefWidth="200.0" text="Apellido " />
+                                                      <TableColumn fx:id="add_pilotoManga_NumLicenciaColumn" prefWidth="150.0" text="NumLicencia" />
+                                                      <TableColumn fx:id="add_pilotoManga_EmailColumn" prefWidth="200.0" text="Email" />
+                                                  </columns>
+                                                </TableView>
+                                                <Button layoutX="834.0" layoutY="23.0" mnemonicParsing="false" onAction="#buttonRefresh" text="Refresh" AnchorPane.bottomAnchor="655.0" AnchorPane.leftAnchor="830.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="showAllMangaTab" text="Show Todos ">
+                                <content>
+                                    <ScrollPane prefViewportHeight="699.0" prefViewportWidth="990.0">
+                                       <content>
+                                        <AnchorPane styleClass="background">
+                                             <children>
+                                                <TableView fx:id="show_concManga_ConcursoTableView" layoutX="14.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="480.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="show_concManga_NoConcursoColumn" prefWidth="75.0" text="No" />
+                                                    <TableColumn fx:id="show_concManga_NombreColumn" prefWidth="200.0" text="Nombre" />
+                                                      <TableColumn fx:id="show_concManga_TipoConcursoColumn" prefWidth="200.0" text="Tipo Concurso" />
+                                                      <TableColumn fx:id="show_concManga_LugarConcursoColumn" prefWidth="200.0" text="Lugar Cocurso" />
+                                                      <TableColumn fx:id="show_concManga_FechaConcursoColumn" prefWidth="150.0" text="Fecha Concurso" />
+                                                      <TableColumn fx:id="show_concManga_FechaFinRegistroConcursoColumn" prefWidth="150.0" text="Fecha Fin Registro" />
+                                                  </columns>
+                                                </TableView>
+                                                <TableView fx:id="show_pilotoManga_PilotoTableView" layoutX="14.0" layoutY="267.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="270.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="show_pilotoManga_NoPilotoColumn" prefWidth="150.0" text="No" />
+                                                    <TableColumn fx:id="show_pilotoManga_NombreColumn" prefWidth="200.0" text="Nombre" />
+                                                      <TableColumn fx:id="show_pilotoManga_ApellidoColumn" prefWidth="200.0" text="Apellido" />
+                                                      <TableColumn fx:id="show_pilotoManga_EmailColumn" prefWidth="200.0" text="Email" />
+                                                      <TableColumn fx:id="show_pilotoManga_NumLicenciaColumn" prefWidth="200.0" text="Num Licencia" />
+                                                  </columns>
+                                                </TableView>
+                                                <ChoiceBox fx:id="show_manga_FechaChoiceBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" AnchorPane.bottomAnchor="685.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="845.0" AnchorPane.topAnchor="10.0" />
+                                                <TableView fx:id="show_manga_MangaTableView" layoutX="14.0" layoutY="494.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="490.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="show_manga_numMangaColumn" prefWidth="100.0" text="No" />
+                                                      <TableColumn fx:id="show_manga_tiempoColumn" prefWidth="150.0" text="Tiempo" />
+                                                    <TableColumn fx:id="show_manga_alturaColumn" prefWidth="150.0" text="Altura" />
+                                                      <TableColumn fx:id="show_manga_aterizajeColumn" prefWidth="150.0" text="Alterizaje" />
+                                                      <TableColumn fx:id="show_manga_penalizacionColumn" prefWidth="125.0" text="Peñalizaciones" />
+                                                      <TableColumn fx:id="show_manga_puntuacionColumn" prefWidth="150.0" text="Punto" />
+                                                      <TableColumn fx:id="show_manga_puntuacionFinalColumn" prefWidth="150.0" text="PuntoFinal" />
+                                                  </columns>
+                                                </TableView>
+                                                <Button layoutX="754.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonRefresh" text="Refresh" AnchorPane.bottomAnchor="685.0" AnchorPane.leftAnchor="800.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
